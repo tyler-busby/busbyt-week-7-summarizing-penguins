@@ -407,6 +407,7 @@ Add a new column to penguins called study_year that contains:
 - “Year 3” if the year is 2009 
 
 ```{r}
+#| label: "create-new-variable"
 penguins |>
   mutate(study_year = case_when(   #create study_year variable
     year == 2007 ~ "Year 1",   #set year 2007 to Year 1
@@ -419,6 +420,7 @@ penguins |>
 Starting with penguins, only keep observations for chinstrap penguins, then only keep the `flipper_length_mm` and `body_mass_g` variables. Add a new column called `fm_ratio` that contains the ratio of flipper length to body mass for each penguin. Next, add another column named `ratio_bin` which contains the word “high” if `fm_ratio` is greater than or equal to 0.05, “low” if the ratio is less than 0.05, and “no record” if anything else (e.g. NA). 
 
 ```{r}
+#| label: "following-sequence-3"
 penguins |>
   filter(species == "Chinstrap") |> #select only Chinstrap penguin species
   select(flipper_length_mm, body_mass_g) |> #select only flipper length and body mass columns
